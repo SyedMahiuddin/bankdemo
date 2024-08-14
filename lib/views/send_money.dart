@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+String imgLink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlgVUiuTQbmj_jO_W1nmX8bzbXS2DDxMStn8FdSPyK7SSAKVnHXZjTx9764JdwzGSWd84&usqp=CAU";
 
 class SendMoneyScreen extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ class SendMoneyScreen extends StatelessWidget {
             SizedBox(height: 20),
             ListTile(
               leading: CircleAvatar(
-                backgroundImage: NetworkImage('https://example.com/user1.jpg'),
+                backgroundImage: NetworkImage(imgLink),
               ),
               title: Text('Friends and Family'),
               subtitle: Text('These are personal payments between you and the people you know.'),
