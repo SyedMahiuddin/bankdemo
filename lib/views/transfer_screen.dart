@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../customs/color_helper.dart';
+
 class CardsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: ColorHelper.themeBackColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -15,17 +17,22 @@ class CardsScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                 SizedBox(width: 10,),
+                  SizedBox(width: 10),
                   Container(
-                    height: 35,width: 135,
+                    height: 35,
+                    width: 135,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(90),
-                      color: Colors.green
+                      color: ColorHelper.secondaryFontColor,
                     ),
                     child: Center(
                       child: Text(
                         'Order a card',
-                        style: TextStyle(color: Colors.black, fontSize: 18,fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: ColorHelper.themeBackColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -37,7 +44,7 @@ class CardsScreen extends StatelessWidget {
               child: Text(
                 'Cards',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: ColorHelper.mainFontColor,
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
@@ -49,7 +56,7 @@ class CardsScreen extends StatelessWidget {
               child: Container(
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: ColorHelper.secondaryFontColor,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Padding(
@@ -59,7 +66,7 @@ class CardsScreen extends StatelessWidget {
                     child: Text(
                       'Physical card\n•••• 0611',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: ColorHelper.mainFontColor,
                         fontSize: 18,
                       ),
                     ),
@@ -75,23 +82,23 @@ class CardsScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Icon(Icons.pin, color: Colors.green, size: 30),
+                      Icon(Icons.pin, color: ColorHelper.secondaryFontColor, size: 30),
                       SizedBox(height: 8),
-                      Text('Show PIN', style: TextStyle(color: Colors.white)),
+                      Text('Show PIN', style: TextStyle(color: ColorHelper.mainFontColor)),
                     ],
                   ),
                   Column(
                     children: [
-                      Icon(Icons.credit_card, color: Colors.green, size: 30),
+                      Icon(Icons.credit_card, color: ColorHelper.secondaryFontColor, size: 30),
                       SizedBox(height: 8),
-                      Text('Card details', style: TextStyle(color: Colors.white)),
+                      Text('Card details', style: TextStyle(color: ColorHelper.mainFontColor)),
                     ],
                   ),
                   Column(
                     children: [
-                      Icon(Icons.ac_unit, color: Colors.green, size: 30),
+                      Icon(Icons.ac_unit, color: ColorHelper.secondaryFontColor, size: 30),
                       SizedBox(height: 8),
-                      Text('Freeze card', style: TextStyle(color: Colors.white)),
+                      Text('Freeze card', style: TextStyle(color: ColorHelper.mainFontColor)),
                     ],
                   ),
                 ],
@@ -104,13 +111,13 @@ class CardsScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.grey[800],
+                  color: ColorHelper.themeGreyColor,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Center(
                   child: Text(
                     'Add to Apple Wallet',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    style: TextStyle(color: ColorHelper.mainFontColor, fontSize: 16),
                   ),
                 ),
               ),

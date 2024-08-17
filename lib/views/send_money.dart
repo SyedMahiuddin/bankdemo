@@ -1,38 +1,85 @@
 import 'package:flutter/material.dart';
-String imgLink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlgVUiuTQbmj_jO_W1nmX8bzbXS2DDxMStn8FdSPyK7SSAKVnHXZjTx9764JdwzGSWd84&usqp=CAU";
+import 'package:get/get.dart';
+import '../customs/color_helper.dart'; // Assuming ColorHelper is defined in this path
 
-class SendMoneyScreen extends StatelessWidget {
+class PaymentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorHelper.themeBackColor,
       appBar: AppBar(
-        title: Text('Send Money'),
+        backgroundColor: ColorHelper.themeBackColor,
+        title: Text(
+          "Payments",
+          style: TextStyle(color: ColorHelper.mainFontColor),
+        ),
+        elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '12,50 EUR',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
             ListTile(
               leading: CircleAvatar(
-                backgroundImage: NetworkImage(imgLink),
+                backgroundColor: ColorHelper.themeGreyColor,
+                child: Icon(Icons.calendar_today, color: ColorHelper.mainFontColor),
               ),
-              title: Text('Friends and Family'),
-              subtitle: Text('These are personal payments between you and the people you know.'),
-              trailing: Icon(Icons.check),
+              title: Text("Scheduled transfers", style: TextStyle(color: ColorHelper.mainFontColor)),
+              subtitle: Text("Manage transfers that are due to go out.", style: TextStyle(color: ColorHelper.themeGreyColor)),
+              trailing: Icon(Icons.arrow_forward_ios, color: ColorHelper.secondaryFontColor),
+              onTap: () {},
             ),
-            // Add more ListTiles for payment options
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Create a Money Pool'),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundColor: ColorHelper.themeGreyColor,
+                child: Icon(Icons.swap_horiz, color: ColorHelper.mainFontColor),
               ),
+              title: Text("Direct Debits", style: TextStyle(color: ColorHelper.mainFontColor)),
+              subtitle: Text("1 active", style: TextStyle(color: ColorHelper.themeGreyColor)),
+              trailing: Icon(Icons.arrow_forward_ios, color: ColorHelper.secondaryFontColor),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundColor: ColorHelper.themeGreyColor,
+                child: Icon(Icons.payment, color: ColorHelper.mainFontColor),
+              ),
+              title: Text("Payment requests", style: TextStyle(color: ColorHelper.mainFontColor)),
+              subtitle: Text("Create and manage payments you've requested.", style: TextStyle(color: ColorHelper.themeGreyColor)),
+              trailing: Icon(Icons.arrow_forward_ios, color: ColorHelper.secondaryFontColor),
+              onTap: () {},
+            ),
+            SizedBox(height: 16),
+            Text(
+              "Account details",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: ColorHelper.mainFontColor,
+              ),
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/320px-Flag_of_Europe.svg.png",
+                ),
+              ),
+              title: Text("Euro", style: TextStyle(color: ColorHelper.mainFontColor)),
+              subtitle: Text("IBAN, Swift/BIC", style: TextStyle(color: ColorHelper.themeGreyColor)),
+              trailing: Icon(Icons.arrow_forward_ios, color: ColorHelper.secondaryFontColor),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://upload.wikimedia.org/wikipedia/en/a/a3/Flag_of_the_United_Kingdom.svg",
+                ),
+              ),
+              title: Text("British Pound", style: TextStyle(color: ColorHelper.mainFontColor)),
+              subtitle: Text("UK sort code, Account number", style: TextStyle(color: ColorHelper.themeGreyColor)),
+              trailing: Icon(Icons.arrow_forward_ios, color: ColorHelper.secondaryFontColor),
+              onTap: () {},
             ),
           ],
         ),
