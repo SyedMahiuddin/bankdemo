@@ -1,5 +1,6 @@
 import 'package:bankdemo/views/bottom_navigation.dart';
 import 'package:bankdemo/views/home_screen.dart';
+import 'package:bankdemo/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
       ),
-      home: BottomNavScreen(),
+      home: const SplashScreen(),
     );
   }
 }
-
