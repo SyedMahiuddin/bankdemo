@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "bankdemo-ff215"
-  }
+    "default": "zeller-aa699",
+    "kk": "zeller-aa699"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
